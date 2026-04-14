@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-indigo-600 text-white font-bold transition-all hover:bg-indigo-700 shadow-lg shadow-indigo-200 active:scale-95;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased text-slate-900;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-50;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full border-2 border-slate-50 hover:bg-slate-400 transition-colors;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Markdown Content Styling */
+  .markdown-content {
+    @apply space-y-2;
+  }
+  .markdown-content p {
+    @apply mb-2 last:mb-0;
+  }
+  .markdown-content ul, .markdown-content ol {
+    @apply ml-4 mb-2 list-outside;
+  }
+  .markdown-content ul {
+    @apply list-disc;
+  }
+  .markdown-content ol {
+    @apply list-decimal;
+  }
+  .markdown-content li {
+    @apply mb-1;
+  }
+  .markdown-content strong {
+    @apply font-bold text-slate-900;
+  }
+  .markdown-content a {
+    @apply text-indigo-600 hover:underline;
+  }
+}
